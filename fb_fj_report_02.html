@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook · Land Cruiser FJ — Content Report 14–20 พ.ค. 2569</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f0f2f5;
+  --surface: #ffffff;
+  --surface2: #f5f6f8;
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.14);
+  --text: #1c1c1a;
+  --text2: #52524e;
+  --text3: #96968f;
+  --blue: #1a6bbf;
+  --blue-bg: #e8f1fb;
+  --blue-text: #0c4480;
+  --red-bg: #faeae7;
+  --red-text: #8f3018;
+  --green: #0d6b50;
+  --green-bg: #e0f4ee;
+  --green-text: #07503c;
+  --amber-bg: #faecd8;
+  --amber-text: #7a4a08;
+  --gray-bg: #eeede8;
+  --gray-text: #555450;
+  --purple-bg: #edeefe;
+  --purple-text: #3830a0;
+  --pink-bg: #fae8f0;
+  --pink-text: #8a2550;
+  --radius: 8px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+}
+
+body {
+  font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.page-header {
+  background: linear-gradient(135deg, #1a4f9c 0%, #1e63b8 50%, #1a5aaa 100%);
+  padding: 32px 0 28px;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: 30%;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
+.header-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.65);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.header-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+.header-title span { display: block; }
+
+.header-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 16px;
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 500;
+  padding: 4px 10px; border-radius: 20px;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.2);
+  white-space: nowrap;
+}
+.pill i { font-size: 12px; }
+
+.header-meta-row {
+  display: flex; flex-wrap: wrap; gap: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.header-meta-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: rgba(255,255,255,0.75);
+}
+.header-meta-item i { font-size: 14px; opacity: 0.8; }
+
+/* ===== MAIN ===== */
+.main { padding: 28px 0 60px; }
+
+.section-title {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 12px;
+}
+
+.block { margin-bottom: 28px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Metric grid */
+.metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 10px; }
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+}
+.metric-label { font-size: 11px; color: var(--text3); margin-bottom: 5px; line-height: 1.4; }
+.metric-value { font-size: 22px; font-weight: 600; line-height: 1.1; color: var(--text); }
+.metric-sub { font-size: 11px; color: var(--text3); margin-top: 4px; }
+
+/* Channel card */
+.channel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.channel-item .ch-label { font-size: 11px; color: var(--text3); margin-bottom: 3px; }
+.channel-item .ch-value { font-size: 17px; font-weight: 600; color: var(--text); }
+.ch-up { font-size: 11px; color: #0d6b50; margin-top: 2px; font-weight: 500; }
+.ch-down { font-size: 11px; color: #b03020; margin-top: 2px; font-weight: 500; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+
+/* Performance table */
+.table-wrap { overflow-x: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.perf-table { width: 100%; border-collapse: collapse; background: var(--surface); }
+.perf-table th {
+  font-size: 10px; font-weight: 600; color: var(--text3);
+  text-align: right; padding: 10px 10px;
+  border-bottom: 1px solid var(--border2);
+  white-space: nowrap; background: var(--surface2);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.perf-table th:first-child { text-align: center; border-radius: var(--radius-lg) 0 0 0; }
+.perf-table th:nth-child(2) { text-align: left; }
+.perf-table th:last-child { border-radius: 0 var(--radius-lg) 0 0; }
+.perf-table td {
+  padding: 9px 10px; border-bottom: 1px solid var(--border);
+  font-size: 12px; vertical-align: middle; text-align: right;
+}
+.perf-table td:first-child { text-align: center; font-size: 11px; color: var(--text3); font-weight: 600; width: 30px; }
+.perf-table td:nth-child(2) { text-align: left; min-width: 220px; }
+.perf-table tbody tr:last-child td { border-bottom: none; }
+.perf-table tbody tr:hover td { background: #fafaf8; }
+.post-title { color: var(--text); line-height: 1.4; font-size: 12px; font-weight: 500; }
+.post-badges { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px; }
+.num { font-variant-numeric: tabular-nums; }
+
+.link-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 7px;
+  border: 1px solid var(--border2); color: var(--text3);
+  text-decoration: none; transition: all 0.15s;
+}
+.link-btn:hover { background: var(--blue-bg); color: var(--blue); border-color: #b0cdf0; }
+
+/* Badges */
+.badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 20px; font-weight: 500; white-space: nowrap; }
+.b-promo { background: var(--blue-bg); color: var(--blue-text); }
+.b-live-cat { background: var(--red-bg); color: var(--red-text); }
+.b-trend { background: var(--green-bg); color: var(--green-text); }
+.b-work { background: var(--gray-bg); color: var(--gray-text); }
+.b-new { background: var(--amber-bg); color: var(--amber-text); }
+.b-event { background: var(--pink-bg); color: var(--pink-text); }
+.b-reels { background: var(--purple-bg); color: var(--purple-text); }
+.b-live-type { background: var(--red-bg); color: var(--red-text); }
+.b-image { background: var(--gray-bg); color: var(--gray-text); }
+.b-text { background: var(--green-bg); color: var(--green-text); }
+.b-album { background: var(--blue-bg); color: var(--blue-text); }
+.b-share { background: var(--amber-bg); color: var(--amber-text); }
+
+/* Charts */
+.chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.chart-box {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Funnel table */
+.funnel-table { width: 100%; border-collapse: collapse; }
+.funnel-table th { font-size: 10px; color: var(--text3); font-weight: 600; padding: 4px 10px; border-bottom: 1px solid var(--border2); text-align: right; letter-spacing: 0.04em; text-transform: uppercase; }
+.funnel-table th:first-child { text-align: left; }
+.funnel-table td { padding: 10px 10px; border-bottom: 1px solid var(--border); font-size: 12px; text-align: right; vertical-align: top; }
+.funnel-table td:first-child { text-align: left; }
+.funnel-table tr:last-child td { border-bottom: none; }
+.retention-row { padding-top: 12px; margin-top: 12px; border-top: 1px solid var(--border); font-size: 12px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+
+/* Insight / warn / feedback boxes */
+.insight-box, .warn-box, .feedback-box {
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 12px 16px; margin-bottom: 10px;
+  font-size: 13px; line-height: 1.65;
+}
+.insight-box { border-left: 3px solid #2070c8; background: #f0f6fd; }
+.warn-box    { border-left: 3px solid #d05020; background: #fdf2ee; }
+.feedback-box{ border-left: 3px solid #0d7a5c; background: #eef8f4; }
+strong { font-weight: 600; }
+
+/* Summary list */
+.summary-list { list-style: none; }
+.summary-list li {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 11px 0; border-bottom: 1px solid var(--border);
+  font-size: 13px; line-height: 1.65;
+}
+.summary-list li:last-child { border-bottom: none; }
+.summary-num { font-size: 13px; font-weight: 700; color: #1a6bbf; min-width: 22px; padding-top: 1px; flex-shrink: 0; }
+
+/* Funnel distribution */
+.funnel-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.funnel-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.funnel-card .f-label { font-size: 11px; color: var(--text3); margin-bottom: 6px; line-height: 1.4; }
+.funnel-card .f-value { font-size: 22px; font-weight: 600; color: var(--text); }
+.funnel-card .f-sub { font-size: 11px; color: var(--text3); margin-top: 3px; }
+
+/* Accent top border on funnel cards */
+.funnel-card:nth-child(1) { border-top: 3px solid #2070c8; }
+.funnel-card:nth-child(2) { border-top: 3px solid #0d7a5c; }
+.funnel-card:nth-child(3) { border-top: 3px solid #8850c8; }
+
+footer {
+  text-align: center; font-size: 11px; color: var(--text3);
+  padding: 20px 0 40px; border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+@media(max-width:640px){
+  .channel-grid { grid-template-columns: 1fr; gap: 10px; }
+  .chart-grid { grid-template-columns: 1fr; }
+  .funnel-grid { grid-template-columns: 1fr; }
+  .header-title { font-size: 22px; }
+  .perf-table th:nth-child(5),.perf-table td:nth-child(5),
+  .perf-table th:nth-child(6),.perf-table td:nth-child(6) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="page-header">
+  <div class="container">
+    <div class="header-label">Facebook Content Performance Report</div>
+    <div class="header-title">
+      <span>ติดแก๊ส Land Cruiser FJ</span>
+      <span>หงษ์ทองแก๊ส (02)</span>
+    </div>
+    <div class="header-pills">
+      <span class="pill"><i class="ti ti-calendar"></i> 14–20 พ.ค. 2569</span>
+      <span class="pill"><i class="ti ti-brand-facebook"></i> Facebook Only</span>
+      <span class="pill"><i class="ti ti-bolt"></i> Organic + Ads</span>
+      <span class="pill"><i class="ti ti-file-text"></i> 15 โพสต์</span>
+    </div>
+    <div class="header-meta-row">
+      <span class="header-meta-item"><i class="ti ti-engine"></i> Prins Silverline LPG</span>
+      <span class="header-meta-item"><i class="ti ti-car"></i> Toyota Land Cruiser FJ (2TR-FE)</span>
+      <span class="header-meta-item"><i class="ti ti-arrow-right"></i> Awareness → Conversion Series</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+<div class="container">
+
+  <!-- ภาพรวม Channel -->
+  <div class="block">
+    <p class="section-title">ภาพรวม Channel (เปรียบเทียบกับสัปดาห์ก่อน 7–13 พ.ค.)</p>
+    <div class="card">
+      <div class="channel-grid">
+        <div class="channel-item"><div class="ch-label">ยอดดูรวมทั้งช่อง (Total Views)</div><div class="ch-value">1,345,529</div><div class="ch-down">▼ 9.4% จากสัปดาห์ก่อน</div></div>
+        <div class="channel-item"><div class="ch-label">จำนวนผู้ชมทั้งช่อง (Total Audience)</div><div class="ch-value">563,547</div><div class="ch-up">▲ +12.2% จากสัปดาห์ก่อน</div></div>
+      </div>
+      <hr class="divider">
+      <div class="channel-grid">
+        <div class="channel-item"><div class="ch-label">Organic views</div><div class="ch-value">680,259</div><div class="ch-down">▼ 40.3%</div></div>
+        <div class="channel-item"><div class="ch-label">Ads views</div><div class="ch-value">665,270</div><div class="ch-up">▲ +92.1%</div></div>
+      </div>
+      <hr class="divider">
+      <div class="channel-grid">
+        <div class="channel-item"><div class="ch-label">Watch 3 วิ (ทั้งช่อง)</div><div class="ch-value">341,786</div><div class="ch-down">▼ 18.8% <span style="color:var(--text3);font-weight:400;font-size:10px;">Organic ▼44.6% · Ads ▲+106%</span></div></div>
+        <div class="channel-item"><div class="ch-label">Watch 1 นาที (ทั้งช่อง)</div><div class="ch-value">85,029</div><div class="ch-down">▼ 37.6% <span style="color:var(--text3);font-weight:400;font-size:10px;">Organic ▼46.8% · Ads ▲+203.1%</span></div></div>
+      </div>
+      <hr class="divider">
+      <div class="channel-grid">
+        <div class="channel-item"><div class="ch-label">Total engagement (ทั้งช่อง)</div><div class="ch-value">15,434</div><div class="ch-down">▼ 27.1%</div></div>
+        <div class="channel-item"><div class="ch-label">Total watch time (ทั้งช่อง)</div><div class="ch-value">198 วัน 11 ชม.</div><div class="ch-down">▼ 30.9%</div></div>
+      </div>
+      <hr class="divider">
+      <div style="font-size:12px;color:var(--text2);margin-bottom:5px;">วันที่มียอดดูสูงสุดของ period: <strong>17 พ.ค. 2569</strong> (วัน Live สด) — views รวม 360,158 · organic 70,830 · Ads 289,328</div>
+      <div style="font-size:12px;color:var(--text2);">Reels overview: views 756,317 ▼23.1% · watch time 187 วัน 4 ชม. ▼34.8% · engagement 11,946 ▼32.7%</div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px;">* ตัวเลข % เปรียบเทียบกับช่วง 7–13 พ.ค. 2569 ตามที่ระบบ Facebook รายงาน</div>
+    </div>
+  </div>
+
+  <!-- ภาพรวม 15 โพสต์ -->
+  <div class="block">
+    <p class="section-title">ภาพรวม 15 โพสต์ FJ ใน Period นี้</p>
+    <div class="metric-grid">
+      <div class="metric-card"><div class="metric-label">Total views</div><div class="metric-value">576,110</div><div class="metric-sub">Organic 324,259 · Ads 251,851</div></div>
+      <div class="metric-card"><div class="metric-label">Total reach</div><div class="metric-value">452,211</div><div class="metric-sub">Organic 90.1%</div></div>
+      <div class="metric-card"><div class="metric-label">Total engagement</div><div class="metric-value">5,274</div><div class="metric-sub">Like 4,791 · Comment 239 · Share 208</div></div>
+      <div class="metric-card"><div class="metric-label">Avg ER views organic</div><div class="metric-value">1.21%</div><div class="metric-sub">Max 2.05% · Min 0.30%</div></div>
+      <div class="metric-card"><div class="metric-label">Avg ER reach organic</div><div class="metric-value">2.14%</div><div class="metric-sub">Max 4.15% · Min 0.54%</div></div>
+      <div class="metric-card"><div class="metric-label">โพสต์ที่ยิง Ads</div><div class="metric-value">5 / 15</div><div class="metric-sub">Ads views 251,851 (43.7%)</div></div>
+    </div>
+  </div>
+
+  <!-- ตาราง Performance -->
+  <div class="block">
+    <p class="section-title">Performance ทุกโพสต์ (เรียงตาม Total Views)</p>
+    <div class="table-wrap">
+      <table class="perf-table">
+        <thead><tr>
+          <th>#</th>
+          <th style="text-align:left;">หัวข้อ / ประเภท</th>
+          <th>Total views</th>
+          <th>Engagement</th>
+          <th>ER reach%</th>
+          <th>Ads views</th>
+          <th style="text-align:center;">Link</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>1</td><td><div class="post-title">#22 (LIVE สรุปจบทุกมิติ FJ ติดแก๊ส)</div><div class="post-badges"><span class="badge b-live-cat">ไลฟ์สด</span><span class="badge b-live-type">Live · 17/05 16:30</span></div></td><td class="num">245,883</td><td class="num">632</td><td class="num">4.15%</td><td class="num">229,718</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/v/1E1tTpk52K/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>2</td><td><div class="post-title">#15 (Reels รวมไฟแนนท์ได้ โตโยต้าพาราวินเซอร์)</div><div class="post-badges"><span class="badge b-promo">โปรโมชั่น</span><span class="badge b-reels">Reels · 14/05 19:03</span></div></td><td class="num">87,386</td><td class="num">1,331</td><td class="num">1.89%</td><td class="num">16,897</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/v/1GDDprWmfG/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>3</td><td><div class="post-title">#16 (Reels สรุปอัตราสิ้นเปลือง โปร PT ส่วนลด 14,000 บาท)</div><div class="post-badges"><span class="badge b-promo">โปรโมชั่น</span><span class="badge b-reels">Reels 7:37 · 15/05 14:34</span></div></td><td class="num">44,787</td><td class="num">780</td><td class="num">1.94%</td><td class="num">4,164</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/v/1Dqr1s6CNx/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>4</td><td><div class="post-title">#19 (Reels รีวิวขับ FJ สไตล์คนใช้แก๊ส)</div><div class="post-badges"><span class="badge b-trend">เทรนด์</span><span class="badge b-reels">Reels 2:55 · 16/05 12:30</span></div></td><td class="num">36,137</td><td class="num">733</td><td class="num">2.34%</td><td class="num">1,072</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/v/18vkdSEW2E/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>5</td><td><div class="post-title">#17 (Text รับประกันเครื่อง 3 ปี 100,000 กม. ครอบคลุมทุกภาค)</div><div class="post-badges"><span class="badge b-promo">โปรโมชั่น</span><span class="badge b-text">Text post · 15/05 22:34</span></div></td><td class="num">35,551</td><td class="num">433</td><td class="num">2.39%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/p/18uaZX1Mu4/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>6</td><td><div class="post-title">#28 (Text รายชื่อศูนย์ผ่อน FJ รวมไฟแนนท์ รับประกัน 3 ปี)</div><div class="post-badges"><span class="badge b-promo">โปรโมชั่น</span><span class="badge b-text">Text post · 20/05 14:43</span></div></td><td class="num">30,939</td><td class="num">265</td><td class="num">1.56%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/p/18Tj1bLEUe/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>7</td><td><div class="post-title">#26 (Album Toyota ทยอยนำรถมาติดตั้ง เตรียมจอง Test Drive)</div><div class="post-badges"><span class="badge b-work">บรรยากาศติดตั้ง</span><span class="badge b-album">Album · 19/05 17:48</span></div></td><td class="num">16,944</td><td class="num">256</td><td class="num">2.79%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/p/18j4NSehR1/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>8</td><td><div class="post-title">#18 (Image วันอาทิตย์จะ Live FJ ติดแก๊สทุกมิติ)</div><div class="post-badges"><span class="badge b-promo">โปรโมชั่น</span><span class="badge b-image">Image · 16/05 01:04</span></div></td><td class="num">15,846</td><td class="num">159</td><td class="num">2.15%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/p/1Cg6umVxmc/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>9</td><td><div class="post-title">#27 (Album รื้อระบบ FJ ทำ 3D Scanner งานเหล็ก)</div><div class="post-badges"><span class="badge b-work">บรรยากาศติดตั้ง</span><span class="badge b-album">Album · 19/05 17:55</span></div></td><td class="num">15,594</td><td class="num">171</td><td class="num">2.12%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/p/1CyJRzxnx1/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>10</td><td><div class="post-title">#20 (Live อยากทราบเรื่องไหน คอมเมนต์ไว้ พรุ่งนี้ Live สรุป)</div><div class="post-badges"><span class="badge b-new">ติดแก๊สรุ่นใหม่</span><span class="badge b-live-type">Live 2:48 · 16/05 15:38</span></div></td><td class="num">13,145</td><td class="num">127</td><td class="num">1.82%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/v/1BJGqe7eb8/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>11</td><td><div class="post-title">#29 (Album หงษ์ทองแก๊ส ไว้ใจคุณภาพ ผ่อน FJ รวมไฟแนนท์)</div><div class="post-badges"><span class="badge b-work">บรรยากาศติดตั้ง</span><span class="badge b-album">Album · 20/05 16:32</span></div></td><td class="num">8,713</td><td class="num">130</td><td class="num">3.04%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/p/1GdDvgDYd3/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>12</td><td><div class="post-title">#25 (Album ขอบคุณทีมงานที่ร่วม Live เมื่อวาน)</div><div class="post-badges"><span class="badge b-work">บรรยากาศติดตั้ง</span><span class="badge b-album">Album · 18/05 09:06</span></div></td><td class="num">8,107</td><td class="num">105</td><td class="num">2.44%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/p/18ugDfeC1e/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>13</td><td><div class="post-title">#21 (Image วันนี้ LIVE 16:30 น. FJ ติดแก๊ส สรุปจบทุกมิติ)</div><div class="post-badges"><span class="badge b-event">ประกาศกิจกรรม</span><span class="badge b-image">Image · 17/05 11:00</span></div></td><td class="num">9,685</td><td class="num">124</td><td class="num">2.14%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/p/1BHX3YnVr6/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>14</td><td><div class="post-title">#24 (Share link FJ ติดแก๊ส ประกันเครื่อง รับประกันยังไง?)</div><div class="post-badges"><span class="badge b-live-cat">ไลฟ์สด</span><span class="badge b-share">Share link · 17/05 18:21</span></div></td><td class="num">3,761</td><td class="num">17</td><td class="num">0.85%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/v/1E1tTpk52K/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+          <tr><td>15</td><td><div class="post-title">#23 (Share link ใครรอฟัง มีคำถาม แวะมาเม้นถามได้)</div><div class="post-badges"><span class="badge b-live-cat">ไลฟ์สด</span><span class="badge b-share">Share link · 17/05 16:50</span></div></td><td class="num">3,632</td><td class="num">11</td><td class="num">0.54%</td><td class="num">0</td><td style="text-align:center;"><a class="link-btn" href="https://www.facebook.com/share/v/1E1tTpk52K/" target="_blank" rel="noopener"><i class="ti ti-external-link" style="font-size:14px;"></i></a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <div class="block">
+    <div class="chart-grid">
+      <div class="chart-box">
+        <p class="section-title">Views ตาม Media Type</p>
+        <div style="position:relative;height:200px;"><canvas id="chartViews" role="img" aria-label="Bar chart views แบ่งตาม media type"></canvas></div>
+      </div>
+      <div class="chart-box">
+        <p class="section-title">Engagement ตาม Media Type</p>
+        <div style="position:relative;height:200px;"><canvas id="chartEng" role="img" aria-label="Bar chart engagement แบ่งตาม media type"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reels Funnel -->
+  <div class="block">
+    <p class="section-title">Reels — Watch Funnel (3 คลิป)</p>
+    <div class="card" style="padding: 0;">
+      <div style="overflow-x:auto;padding:20px 24px;">
+        <table class="funnel-table">
+          <thead><tr>
+            <th>Reels / หัวข้อย่อ</th>
+            <th>ความยาว</th><th>Views</th><th>ดู 3 วิ</th><th>ดู 15 วิ</th><th>ดู 1 นาที</th>
+          </tr></thead>
+          <tbody>
+            <tr><td><div style="font-size:12px;font-weight:500;">#15 (รวมไฟแนนท์ได้ โตโยต้าพาราวินเซอร์)</div><div style="font-size:10px;color:var(--text3);margin-top:3px;">ER views organic 1.62% · avg 19 วิ · distribution score +0.3</div></td><td class="num">2:14</td><td class="num">87,386</td><td class="num">29,105</td><td class="num">13,449</td><td class="num">8,377</td></tr>
+            <tr><td><div style="font-size:12px;font-weight:500;">#16 (สรุปอัตราสิ้นเปลือง โปร PT ส่วนลด 14,000)</div><div style="font-size:10px;color:var(--text3);margin-top:3px;">ER views organic 1.69% · avg 36 วิ · distribution score −0.6</div></td><td class="num">7:37</td><td class="num">44,787</td><td class="num">19,677</td><td class="num">9,584</td><td class="num">4,788</td></tr>
+            <tr><td><div style="font-size:12px;font-weight:500;">#19 (รีวิวขับ FJ สไตล์คนใช้แก๊ส)</div><div style="font-size:10px;color:var(--text3);margin-top:3px;">ER views organic 2.05% · avg 30 วิ · distribution score −1.2</div></td><td class="num">2:55</td><td class="num">36,137</td><td class="num">14,391</td><td class="num">7,483</td><td class="num">5,018</td></tr>
+          </tbody>
+        </table>
+        <div class="retention-row">
+          <span style="font-size:11px;color:var(--text3);">Retention rate 3 วิ → 15 วิ:</span>
+          <span>#15 (พาราวินเซอร์): <strong>46.2%</strong></span>
+          <span>#16 (โปร PT): <strong>48.7%</strong></span>
+          <span>#19 (รีวิวขับ): <strong>52.0%</strong> 🏆</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Insights -->
+  <div class="block">
+    <p class="section-title">Key Insights &amp; สัญญาณที่ต้องติดตาม</p>
+    <div class="insight-box"><strong>🏆 #22 (LIVE สรุปจบทุกมิติ) คือโพสต์ที่มี Views สูงสุดของ period นี้</strong> — 245,883 views แต่มาจาก Ads ถึง 229,718 ครั้ง (93.4%) ยิง Ads ระหว่าง Live สดทำให้ reach พุ่ง 227,522 แต่ organic มีเพียง 16,165 อย่างไรก็ดี ER reach organic สูงสุดของ period ที่ 4.15% แสดงว่าคนที่เจอโพสต์นี้แบบไม่ผ่าน Ads โต้ตอบสูงมาก</div>
+    <div class="insight-box"><strong>📹 #15 (Reels รวมไฟแนนท์ได้ โตโยต้าพาราวินเซอร์) คือ Best Organic Performer</strong> — 70,489 organic views สูงสุดในทุกโพสต์ distribution score +0.3 เป็นโพสต์เดียวที่เป็นบวก และ 66.3% ของเวลารับชมมาจาก FB Suggestion ยืนยันว่า algorithm ชอบเผยแพร่เนื้อหาแบบนี้ ควรทำซ้ำ</div>
+    <div class="insight-box"><strong>⏱ Reels ยาวไม่ได้แย่กว่าเสมอไป</strong> — #16 (Reels สรุปอัตราสิ้นเปลือง โปร PT) ความยาว 7:37 นาที มี avg watch time 36 วิ สูงสุดในบรรดา Reels ทั้งหมด ส่วน #19 (Reels รีวิวขับ FJ) มี retention ดีที่สุด 52% แต่ยังไม่ได้ boost เพิ่ม น่าลองนำมายิง Ads ดู</div>
+    <div class="insight-box"><strong>📝 #28 (Text รายชื่อศูนย์ผ่อน FJ) คือ Underrated Hit — ดีเกินคาด</strong> — Text post ไม่มีสื่อ ไม่มี Ads แต่ทำได้ 30,939 views ด้วย organic ล้วน สูงกว่า Reels #19 (รีวิวขับ FJ) ด้วยซ้ำ สะท้อนว่า audience ต้องการข้อมูล Practical จริงๆ เช่น รายชื่อศูนย์ ราคา เงื่อนไข</div>
+    <div class="warn-box"><strong>⚠️ Distribution Score ติดลบเกือบทุกโพสต์</strong> — #15: +0.3, #16: −0.6, #19: −1.2, #20 (Live อยากทราบเรื่องไหน): −18.0, #22 (LIVE สรุปจบ): −1.8 ค่าติดลบหมายความว่า algorithm กระจายคอนเทนต์ได้ต่ำกว่าค่าเฉลี่ยช่อง โพสต์ #20 แย่ที่สุด คาดว่าเป็นเพราะเนื้อหาเป็นแค่การประกาศ ไม่มีคุณค่าในตัวเอง</div>
+    <div class="warn-box"><strong>⚠️ Share Link ให้ผลน้อยมาก</strong> — #23 (Share link ใครรอฟัง) และ #24 (Share link ประกันเครื่องยังไง?) ได้ views รวมเพียง 7,393 ER reach เพียง 0.54–0.85% ต่ำสุดใน period ไม่แนะนำให้ใช้วิธีนี้ดึงคนเข้า Live ควรทำ Reels สั้นหรือ Image แทน</div>
+    <div class="insight-box"><strong>🏭 #26 (Album Toyota ทยอยนำรถมาติดตั้ง) — Social Proof ดึงดูดความสนใจ</strong> — ทำได้ 16,944 views, ER reach 2.79% สูงสุดในกลุ่ม Album แสดงว่า audience สนใจว่า "มีศูนย์ Toyota นำรถมาติดจริงไหม" เนื้อหาที่แสดงความคืบหน้าจริงจากพาร์ทเนอร์ระดับ Toyota มีพลังดึงดูดสูง</div>
+  </div>
+
+  <!-- สรุป Insights 5 ข้อ -->
+  <div class="block">
+    <p class="section-title">สรุป Insights สำคัญ 5 ข้อ</p>
+    <div class="card">
+      <ul class="summary-list">
+        <li><span class="summary-num">1.</span><span><strong>LIVE 17 พ.ค. ขับเคลื่อนด้วย Ads เกือบทั้งหมด</strong> — #22 (LIVE สรุปจบทุกมิติ) 245,883 views แต่ 93.4% มาจาก Ads กลยุทธ์ยิง Ads ระหว่าง Live สดได้ผลดีในแง่ exposure แต่ organic reach เพียง 4,985 เท่านั้น ถ้าหยุด Ads ตัวเลขจะหายไปทันที</span></li>
+        <li><span class="summary-num">2.</span><span><strong>#15 (Reels รวมไฟแนนท์ได้ โตโยต้าพาราวินเซอร์) คือ "True Organic Winner"</strong> — organic 70,489 views, distribution score +0.3 เป็นโพสต์เดียวที่ algorithm ชอบ watch time 66.3% มาจาก FB Suggestion เป็นสัญญาณว่าต้นแบบคอนเทนต์นี้ควรทำซ้ำ</span></li>
+        <li><span class="summary-num">3.</span><span><strong>#28 (Text รายชื่อศูนย์ผ่อน FJ) คือ Underrated Hit</strong> — Text post ไม่มีสื่อ ไม่มี Ads ทำได้ 30,939 views สะท้อนว่า audience ต้องการข้อมูล Practical จริงๆ ไม่ใช่แค่เนื้อหาสวยงาม</span></li>
+        <li><span class="summary-num">4.</span><span><strong>Distribution Score ติดลบแทบทุกโพสต์</strong> — เป็นสัญญาณว่า algorithm ยังไม่กระจายคอนเทนต์ช่องนี้ได้ดีเท่าค่าเฉลี่ย ต้องเน้นสร้าง engagement ใน 30 นาทีแรกหลังโพสต์</span></li>
+        <li><span class="summary-num">5.</span><span><strong>Share Link ไม่ work</strong> — #23 และ #24 ER reach เพียง 0.54–0.85% ต่ำสุดใน period ไม่ควรใช้กลยุทธ์ share link เพื่อดึง traffic ให้ Live ควรทำ Teaser Reels สั้นแทน</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Funnel Distribution -->
+  <div class="block">
+    <p class="section-title">สรุป Funnel Distribution</p>
+    <div class="funnel-grid">
+      <div class="funnel-card"><div class="f-label">Conversion — กระตุ้นตัดสินใจ (8 โพสต์)</div><div class="f-value">383,362</div><div class="f-sub">Views รวม</div></div>
+      <div class="funnel-card"><div class="f-label">Awareness — สร้างการรับรู้ (3 โพสต์)</div><div class="f-value">59,967</div><div class="f-sub">Views รวม</div></div>
+      <div class="funnel-card"><div class="f-label">Branding — สร้างภาพลักษณ์ (4 โพสต์)</div><div class="f-value">49,358</div><div class="f-sub">Views รวม</div></div>
+    </div>
+  </div>
+
+  <!-- Feedback ทีมคอนเทนต์ -->
+  <div class="block">
+    <p class="section-title">Feedback ทีมคอนเทนต์ — แนวทางปรับปรุง / ต่อยอด</p>
+    <div class="feedback-box"><strong>✅ ทำต่อ — สูตร Reels แบบ #15 (รวมไฟแนนท์ได้ โตโยต้าพาราวินเซอร์) คือ template ที่ดีที่สุดของช่องตอนนี้</strong> — distribution score บวก, FB Suggestion กระจายให้เอง, organic สูงสุด สิ่งที่ทำให้โพสต์นี้โดดเด่นคือจับ pain point ตรง (ผ่อนรวมไฟแนนท์ได้ที่ศูนย์) + ระบุชื่อพาร์ทเนอร์จริง (Toyota พาราวินเซอร์) แนะนำทำ Reels ในรูปแบบนี้กับศูนย์อื่นๆ ที่เข้าร่วมโครงการด้วย</div>
+    <div class="feedback-box"><strong>✅ ต่อยอด — #19 (Reels รีวิวขับ FJ สไตล์คนใช้แก๊ส) มี retention ดีที่สุด 52% แต่ยังไม่ได้ boost</strong> — ควรลองยิง Ads เพิ่มในโพสต์นี้ หรือทำ Reels ชุดต่อเนื่อง เช่น "ขับแก๊ส vs น้ำมัน เปรียบต้นทุนจริง", "เติมแก๊สที่ไหนบ้าง ครอบคลุมแค่ไหน"</div>
+    <div class="feedback-box"><strong>✅ ต่อยอด — Text post ข้อมูลจริงทำได้ดีมาก อย่ามองข้าม</strong> — #17 และ #28 ทำ organic views ได้ 30,000+ ทั้งคู่ ควรทำ Text post ชุด "FAQ ติดแก๊ส FJ" เช่น ราคาสุทธิ, รายชื่อศูนย์ต่างจังหวัด, เงื่อนไขรับประกัน ลงสม่ำเสมอ</div>
+    <div class="feedback-box"><strong>✅ ต่อยอด — Social Proof จากศูนย์ Toyota ได้ผล ควรทำต่อเนื่อง</strong> — #26 (Album Toyota ทยอยนำรถมาติดตั้ง) ER reach 2.79% สูงสุดในกลุ่ม Album บอกเล่าความคืบหน้าจริง (มีกี่ศูนย์แล้ว, ภาคไหนบ้าง, ลูกค้าแรกได้รับรถแล้ว) จะช่วยสร้างความน่าเชื่อถือและดึง organic ได้ต่อเนื่อง</div>
+    <div class="warn-box"><strong>⚠️ ปรับปรุง — หยุดใช้ Share Link เพื่อดึงคนเข้า Live</strong> — #23 และ #24 ที่แชร์ลิงก์ Live ซ้ำได้ผลแย่ที่สุดใน period ควรเปลี่ยนมาใช้ Reels สั้นตัดไฮไลต์จาก Live หรือ Image แจ้งกำหนดการแทน</div>
+    <div class="warn-box"><strong>⚠️ ปรับปรุง — โพสต์ประกาศ Live ล่วงหน้าควรมีคุณค่าในตัวเอง</strong> — #20 (Live อยากทราบเรื่องไหน) distribution score −18.0 แย่ที่สุดใน period ลองเปลี่ยนเป็น "เผย 3 เรื่องที่จะพูดใน Live" หรือ "คำถามที่คนถามเยอะที่สุดก่อน Live"</div>
+    <div class="warn-box"><strong>⚠️ ระวัง — Organic Views และ Engagement ของทั้งช่องลดลงต่อเนื่อง</strong> — organic views ทั้งช่อง −40.3%, engagement −27.1%, watch time −30.9% ตัวเลข Ads views ที่เพิ่ม +92.1% ช่วยประคองยอดรวมไว้ แต่ถ้า organic ไม่ฟื้น การพึ่งพา Ads ในระยะยาวจะมีต้นทุนสูงขึ้นเรื่อยๆ ควรเน้นคุณภาพ hook ใน 3 วินาทีแรกของ Reels และทดสอบหัวข้อใหม่ๆ ที่ตอบ intent จริงของกลุ่มเป้าหมาย</div>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="container">หงษ์ทองแก๊ส (02) · Facebook Content Report · period_id: 2026_05_14_05_20 · Generated 21/05/2569</div>
+</footer>
+
+<script>
+const mediaLabels=['Reels','Live','Text','Album','Image','Share link'];
+const mediaViews=[168310,258028,66490,49358,25531,7393];
+const mediaEng=[2844,776,698,462,283,28];
+const colors=['#534AB7','#D85A30','#3B6D11','#185FA5','#888780','#854F0B'];
+const colorsLight=['#AFA9EC','#F0997B','#97C459','#85B7EB','#B4B2A9','#EF9F27'];
+function makeBar(id,data,colArr){
+  new Chart(document.getElementById(id),{
+    type:'bar',
+    data:{labels:mediaLabels,datasets:[{data,backgroundColor:colArr,borderRadius:5,borderSkipped:false}]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' '+ctx.parsed.y.toLocaleString()}}},
+      scales:{
+        x:{grid:{display:false},ticks:{font:{size:11},color:'#96968f'}},
+        y:{grid:{color:'rgba(0,0,0,0.04)'},border:{dash:[3,3]},ticks:{font:{size:10},color:'#96968f',callback:v=>v>=1000?(v/1000).toFixed(0)+'k':v}}
+      }
+    }
+  });
+}
+makeBar('chartViews',mediaViews,colors);
+makeBar('chartEng',mediaEng,colorsLight);
+</script>
+</body>
+</html>
